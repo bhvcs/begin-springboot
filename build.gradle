@@ -16,8 +16,11 @@ repositories {
 }
 
 dependencies {//프로젝트에 필요한 의존성들을 선언하는 곳
-	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	compileOnly 'org.projectlombok:lombok:1.18.20'
+	annotationProcessor 'org.projectlombok:lombok:1.18.20'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'junit:junit:4.13.1'
 }
 
 tasks.named('test') {
