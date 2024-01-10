@@ -16,8 +16,16 @@ repositories {
 }
 
 dependencies {//프로젝트에 필요한 의존성들을 선언하는 곳
-	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	compileOnly 'org.projectlombok:lombok:1.18.20'
+	annotationProcessor 'org.projectlombok:lombok:1.18.20'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	runtimeOnly 'com.h2database:h2'
+	implementation("org.springframework.boot:spring-boot-devtools")
+	implementation 'org.springframework.boot:spring-boot-starter-mustache' //서버 템플릿 엔진, 스프링 부트에서 지원함 -> 개발자가 버전을 신경쓰지 않아도 됨
+	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client' //spring-security-oauth2-client(-jose)를 관리해줌
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'junit:junit:4.13.1'
 }
 
 tasks.named('test') {
