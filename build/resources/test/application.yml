@@ -1,0 +1,27 @@
+spring: #test에서는 yml파일이 없으면 main의 application.yml을 자동으로 들고온다, but, application-oauth.yml은 못 가져옴, 그래서 이렇게 쓰는중
+  h2:
+    console:
+      enabled: true
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:testdb
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+  session:
+    store-type: jdbc #jdbc를 세션 저장소로 지정 (기존에는 내장 Tomcat에 저장했음)
+#Test OAuth
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: test #실제 구글 연동이 필요한 것은 아니므로 가짜 값
+            client-secret: test
+            scope: profile, email
+
+server:
+  servlet:
+    encoding:
+      force-response: true #한국어 인식할 수 있게
