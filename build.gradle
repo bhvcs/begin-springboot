@@ -29,3 +29,6 @@ dependencies {//프로젝트에 필요한 의존성들을 선언하는 곳
 	testImplementation 'org.springframework.security:spring-security-test' //스프링 시큐리티도 테스트 할 수 있도록
 }
 
+jar{
+	enabled= false
+}
