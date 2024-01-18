@@ -2,7 +2,7 @@ package com.example.beginspringboot.config.auth; //시큐리티 관련 클래스
 
 import com.example.beginspringboot.domain.user.Role;
 import lombok.RequiredArgsConstructor;
-import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
+//import org.springframework.boot.autoconfigure.security.servlet.PathRequest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
@@ -23,7 +23,7 @@ public class SecurityConfig{//OAuth 라이브러리를 이용한 소셜 로그�
                 .headers((headerConfig)->headerConfig.frameOptions(frameOptionsConfig -> frameOptionsConfig.disable())) //h2-console 화면을 사용하기 위해서 disable하는겨
 
                 .authorizeHttpRequests((authorizeRequests)->authorizeRequests
-                        .requestMatchers(PathRequest.toH2Console()).permitAll()
+//                        .requestMatchers(PathRequest.toH2Console()).permitAll()
                         .requestMatchers("/", "/css/**", "/images/**", "/js/**").permitAll()
                         .requestMatchers("/api/v1/**").hasRole(Role.USER.name()) //ROLE은 spring security에서 지원해주네
                         .anyRequest().authenticated()
