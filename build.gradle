@@ -25,6 +25,9 @@ dependencies {//프로젝트에 필요한 의존성들을 선언하는 곳
 	implementation 'org.springframework.boot:spring-boot-starter-mustache' //서버 템플릿 엔진, 스프링 부트에서 지원함 -> 개발자가 버전을 신경쓰지 않아도 됨
 	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client' //spring-security-oauth2-client(-jose)를 관리해줌
 	implementation 'org.springframework.session:spring-session-jdbc'//세션 저장소로 데이터베이스를 사용하고자
+
+	implementation 'org.mariadb.jdbc:mariadb-java-client'//maria db 드라이버 등록(전에는 h2 드라이버뿐이었음)
+
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testImplementation 'org.springframework.security:spring-security-test' //스프링 시큐리티도 테스트 할 수 있도록
 }
