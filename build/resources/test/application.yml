@@ -4,11 +4,15 @@ spring: #test에서는 yml파일이 없으면 main의 application.yml을 자동�
       enabled: true
   datasource:
     driver-class-name: org.h2.Driver
-    url: jdbc:h2:mem:testdb
+    hikari:
+      jdbc-url: jdbc:h2:mem://localhost/~/testdb;MODE=MYSQL
+    #url: jdbc:h2:mem:testdb
   jpa:
     properties:
       hibernate:
         show_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+
   session:
     store-type: jdbc #jdbc를 세션 저장소로 지정 (기존에는 내장 Tomcat에 저장했음)
 #Test OAuth
