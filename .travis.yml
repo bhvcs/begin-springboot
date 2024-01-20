@@ -33,6 +33,18 @@ deploy: #외부 서비스와 연동될 행위들을 선언
     local_dir: deploy #before_deploy에서 생성한 디렉토리, 해당 위치의 파일들만 S3로 전송
     wait-until-deployed: true
 
+  - provider: codedeploy
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY #Travis repo settings에 설정된 값
+    bucket: bohyun-springboot-build #S3 버킷
+    key: bohyun-springboot-webservice.zip #빌드 파일을 압축해서 전달
+    bundle_type: zip #압축 확장자
+    application: bohyun-springboot-webservice #웹 콘솔에서 등록한 CodeDeploy 애플리케이션
+    deployment_group: bohyun-springboot-webservice-group #웹 콘솔에서 등록한 CodeDeploy 애플리케이션
+    region: ap-northeast-2
+    wait-until-deployed: true
+#git push를 하면 Travis CI를 통해 자동으로 파일이 올려지는 것을 확인할 수 있음
+
 # CI 실행 완료 시 메일로 알람
 notifications:
   email:
