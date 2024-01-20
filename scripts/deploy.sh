@@ -1,15 +1,15 @@
 #!/bin/bash
 
 REPOSITORY=/home/ec2-user/app/step2
-PROJECT_NAME=bohyun-springboot-webservice
+PROJECT_NAME=springboot-posts-service
 
 echo "> Build 파일 복사"
 cp $REPOSITORY/zip/*.jar $REPOSITORY/
 
 echo "> 현재 구동 중인 애플리케이션 pid 확인"
 
-CURRENT_PID=$(pgrep -fl bohyun-springboot-webservice | grep jar | awk '{print $1}')
-# bohyun-springboot-webservice을 이름으로 하는 다른 프로그램이 있을 수도 있으니 jar 프로세스를 찾고 id를 찾는다
+CURRENT_PID=$(pgrep -fl springboot-posts-service | grep jar | awk '{print $1}')
+# springboot-posts-service를 이름으로 하는 다른 프로그램이 있을 수도 있으니 jar 프로세스를 찾고 id를 찾는다
 
 echo "현재 구동 중인 애플리케이션 pid: $CURRENT_PID"
 

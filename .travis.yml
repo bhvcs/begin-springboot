@@ -24,7 +24,7 @@ before_deploy:
   - cp build/libs/*.jar before-deploy/
   - cd before-deploy && zip -r before-deploy * # before-deploy에 들어가서 안의 파일들을 zip으로 전체 압축
   - cd ../ && mkdir -p deploy #상위 디렉토리로 이동후 deploy 디렉토리 생성
-  - mv before-deploy/before-deploy.zip deploy/bohyun-springboot-webservice.zip #deploy로 zip파일 이동
+  - mv before-deploy/before-deploy.zip deploy/springboot-posts-service.zip #deploy로 zip파일 이동
 #  - zip -r bohyun-springboot-webservice *
 #  - mkdir -p deploy
 #  - mv bohyun-springboot-webservice.zip deploy/bohyun-springboot-webservice.zip
@@ -45,10 +45,10 @@ deploy: #외부 서비스와 연동될 행위들을 선언
     access_key_id: $AWS_ACCESS_KEY
     secret_access_key: $AWS_SECRET_KEY #Travis repo settings에 설정된 값
     bucket: bohyun-springboot-build #S3 버킷
-    key: bohyun-springboot-webservice.zip #빌드 파일을 압축해서 전달
+    key: springboot-posts-service.zip #빌드 파일을 압축해서 전달
     bundle_type: zip #압축 확장자
-    application: bohyun-springboot-webservice #웹 콘솔에서 등록한 CodeDeploy 애플리케이션
-    deployment_group: bohyun-springboot-webservice-group #웹 콘솔에서 등록한 CodeDeploy 애플리케이션
+    application: springboot-posts-service #웹 콘솔에서 등록한 CodeDeploy 애플리케이션
+    deployment_group: springboot-posts-service-group #웹 콘솔에서 등록한 CodeDeploy 애플리케이션
     region: ap-northeast-2
     wait-until-deployed: true
 #git push를 하면 Travis CI를 통해 자동으로 파일이 올려지는 것을 확인할 수 있음
