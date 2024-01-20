@@ -1,0 +1,6 @@
+version: #codedeploy 버전
+os: linux
+files:
+  - source: / # CodeDeploy에서 전달해준 파일 중, destinaion으로 이동시킬 대상 지정, 루트 경로로 지정하여 전체 파일을 이야기
+    destination: /home/ec2-user/app/step2/zip/ #source에서 지정된 파일을 받을 위치, 이후 jar을 실행하는 등은 destination에서 옮긴 파일들로 진행됨
+    overwrite: yes #기존 파일들이 있으면 덮어쓸지 결정
