@@ -17,6 +17,22 @@ before_install:
 
 script: "./gradlew clean build" #master 브랜치에 푸시되었을 때, 수행하는 명령어
 
+before_deploy:
+  - zip -r bohyun-springboot-webservice *
+  - mkdir -p deploy
+  - mv bohyun-springboot-webservice.zip deploy/bohyun-springboot-webservice.zip
+
+deploy: #외부 서비스와 연동될 행위들을 선언
+  - provider: s3
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY #Travis repo settings에 설정된 값
+    bucket: bohyun-springboot-build #S3 버킷
+    region: ap-northeast-2
+    skip_cleanup: true
+    acl: private #zip 파일 접근을 private으로
+    local_dir: deploy #before_deploy에서 생성한 디렉토리, 해당 위치의 파일들만 S3로 전송
+    wait-until-deployed: true
+
 # CI 실행 완료 시 메일로 알람
 notifications:
   email:
