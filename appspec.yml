@@ -1,4 +1,4 @@
-version: #codedeploy 버전
+version: 0.0 #codedeploy 버전
 os: linux
 files:
   - source: / # CodeDeploy에서 전달해준 파일 중, destinaion으로 이동시킬 대상 지정, 루트 경로로 지정하여 전체 파일을 이야기
