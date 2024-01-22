@@ -24,7 +24,7 @@ public class SecurityConfig{//OAuth 라이브러리를 이용한 소셜 로그�
 
                 .authorizeHttpRequests((authorizeRequests)->authorizeRequests
 //                        .requestMatchers(PathRequest.toH2Console()).permitAll()
-                        .requestMatchers("/", "/css/**", "/images/**", "/js/**").permitAll()
+                        .requestMatchers("/", "/css/**", "/images/**", "/js/**", "/profile").permitAll()
                         .requestMatchers("/api/v1/**").hasRole(Role.USER.name()) //ROLE은 spring security에서 지원해주네
                         .anyRequest().authenticated()
                 )

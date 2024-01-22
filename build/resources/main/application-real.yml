@@ -1,23 +1,15 @@
 spring:
-#  h2:
-#    console:
-#      enable: true
-#  datasource:
-#    driver-class-name: org.h2.Driver
-#    hikari:
-#      jdbc-url: jdbc:h2:mem://localhost/~/testdb;MODE=MYSQL
   jpa:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQLDialect
 #        show_sql: true
 
-
   profiles:
     include: oauth, real-db #스프링에서는 application-xxx.yml(or propertiest)을 이용하면, xxx라는 profile이 해당 yml의 설정을 가져온다
   session:
     store-type: jdbc #jdbc를 세션 저장소로 지정 (기존에는 내장 Tomcat에 저장했음)
-#server:
-#  servlet:
-#    encoding:
-#      force-response: true
+server:
+  servlet:
+    encoding:
+     force-response: true
