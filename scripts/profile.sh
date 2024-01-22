@@ -6,7 +6,7 @@ function find_idle_profile()
 {
   RESPONSE_CODE=$(curl -s -o /dev/null -w "%{http_code}" http://localhost/profile) #현재 엔진엑스가 바라보고 있는 스프링 부트가 정상 수행중인지 호가인하는 코드
 
-  if [ ${RESPONSE_CODE} -ge 400] # 400보다 크면 에러
+  if [ ${RESPONSE_CODE} -ge 400 ] # 400보다 크면 에러
   then
     CURRNET_PROFILE=real2
   else

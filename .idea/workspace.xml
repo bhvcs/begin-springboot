@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f91578a0-0396-4805-9203-122576421a70" name="Changes" comment="CodeDeploy &amp; travis CI 이용">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/stop.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/stop.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scripts/profile.sh" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/profile.sh" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -370,7 +370,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705926692687</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="CodeDeploy &amp; travis CI 이용">
+      <option name="closed" value="true" />
+      <created>1705927940194</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1705927940194</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
