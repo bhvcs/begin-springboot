@@ -1,6 +1,8 @@
 server:
   port: 8081
-
+  servlet:
+    encoding:
+      force-response: true
 spring:
   profiles:
     include: oauth, real-db
